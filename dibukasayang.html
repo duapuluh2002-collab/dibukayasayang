@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy 25th Birthday, Argi Eko Saputro!</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(to bottom, #87CEEB, #FFFFFF); /* Blue to white gradient */
+            background-image: url(foto.jpeg);
+            height: 147vh;
+            background-size: cover;
+            background-position: center;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+            overflow-x: hidden;
+        }
+        .page {
+            display: none;
+            min-height: 100vh;
+            padding: 20px;
+        }
+        .page.active {
+            display: block;
+        }
+        header {
+            background-color: #4682B4; /* Steel blue */
+            color: white;
+            padding: 20px;
+            font-size: 2em;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .cake-container {
+            position: relative;
+            margin: 40px auto;
+            width: 200px;
+            height: 200px;
+        }
+        .cake {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+        .candle {
+            position: absolute;
+            top: 135px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 10px;
+            height: 30px;
+            background-color: #FFD700; /* Gold */
+            border-radius: 5px;
+            animation: flicker 1s infinite alternate;
+        }
+        @keyframes flicker {
+            0% { opacity: 1; transform: translateX(-50%) scaleY(1); }
+            100% { opacity: 0.7; transform: translateX(-50%) scaleY(0.9); }
+        }
+        .flame {
+            position: absolute;
+            top: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 10px;
+            height: 20px;
+            background-color: #FF4500; /* Orange red */
+            border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+            animation: flameFlicker 0.5s infinite alternate;
+        }
+        @keyframes flameFlicker {
+            0% { transform: translateX(-50%) scale(1); }
+            100% { transform: translateX(-50%) scale(1.1); }
+        }
+        .next-btn {
+            margin-top: 30px;
+            padding: 10px 20px;
+            background-color: #4682B4;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 1.2em;
+        }
+        .next-btn:hover {
+            background-color: #5A9BD4;
+        }
+        .container {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .letter {
+            cursor: pointer;
+            display: inline-block;
+            margin: 20px;
+            transition: transform 0.3s;
+        }
+        .letter:hover {
+            transform: scale(1.1);
+        }
+        .letter img {
+            width: 150px;
+            height: auto;
+        }
+        .message {
+            display: none;
+            background-color: #F0F8FF; /* Alice blue */
+            border: 2px solid #4682B4;
+            border-radius: 10px;
+            padding: 20px;
+            margin-top: 20px;
+            font-size: 1.2em;
+            line-height: 1.6;
+            color: #333;
+            animation: fadeIn 1s;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .hearts {
+            font-size: 2em;
+            color: #FF69B4; /* Hot pink */
+        }
+        footer {
+            background-color: #4682B4;
+            color: white;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+            text-align: center;
+        }
+        .romantic-elements {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 20px 0;
+        }
+        .romantic-elements img {
+            width: 50px;
+            margin: 0 10px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Background Music -->
+    <audio controls autoplay>
+        <source src="aboutyou.mp3" type="audio/mp3">
+    </audio>
+
+    <!-- Page 1: Cake with Moving Candles -->
+    <div id="page1" class="page active">
+        <header>
+            Happy 25th Birthday, Argi Eko Saputro! 🎂💐
+        </header>
+        <div class="cake-container">
+            <img src="edb9768ef2e0d0d8c23c9f905ab8f36b.gif" alt="Birthday Cake" class="cake">
+            <div class="candle">
+                <div class="flame"></div>
+            </div>
+        </div>
+        <p>Make a wish and blow out the candle, Sayang! 💕</p>
+        <button class="next-btn" onclick="nextPage()">Next Page</button>
+    </div>
+
+    <!-- Page 2: Letter and Message -->
+    <div id="page2" class="page">
+        <header>
+            A Special Message for You 💗
+        </header>
+        <div class="container">
+            <p>Dear Sayang, click the letter below to read my heartfelt wishes for you. I love you endlessly! 💗</p>
+            
+            <div class="romantic-elements">
+                <img src="love.jpeg" alt="Heart">
+                <img src="flower.jpeg" alt="Flower">
+            </div>
+            
+            <div class="letter" onclick="toggleMessage()">
+                <img src="letter.jpeg" alt="Letter">
+            </div>
+            
+            <div id="message" class="message">
+                <div class="hearts">💗💗💗</div>
+                <p>it’s your special day, wish u all the bestt sayanggg!!! selamat bertumbuh jauh lebih baik sayangku cintaaku, panjang umur, sehat selaluuu. a wish for u on ur birthday, whatever u ask may u receive, whatever u seek may u find, whatever u wish may it be fulfilled on ur birthday and together. i hope u will walk on this journey knowing that u belong babe, i hope even if things sometime do not go ur way u will stop trying, u will not give up on urself and on ur thoughest days, i hope u will reminding your self of this word u deserve better. kamu layak dicintai dan dirayakan dalam hal apapun!! and may Allah grant u what ur heart truly desire, may Allah make everything u want good for u, so that may accept all ur prayers and wishes babe thank u for accepting me🥺🥺💗💗. sometimes, yang bisa diandelin hanya kamu sendiri, tapi jangan pernah kamu ngerasa sendiri, if you need someone to talk i’m here, and always here, kamu masih punya diri kamu sendiri, kamu punya tuhan, keluarga, teman, dan juga aku sayang!! semoga hal baik selalu beriringan denganmu, semoga semesta selalu berpihak kepadamu, semoga jalanmu selalu dipermudah, rezekimu dilancarkan, hajatmu segera dikabulkan. teruslah tumbuh, teruslah melangkah & berbahagia. aku akan selalu bangga atas setiap proses yang sudah kamu lalui laki-laki hebat, laki-laki kuat, laki-laki gantengg. selamat berkelana, i will always support u sayangg!! semoga segala niat baikmu dipermudah dan dilancarkan yaa aamiin💐💐💗💗💗</p>
+                <p>from: ur girlfriend (Destiii)</p>
+                <div class="hearts">💗💗💗</div>
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        Made with love for Argi 💕
+    </footer>
+    
+    <script>
+        function nextPage() {
+            document.getElementById('page1').classList.remove('active');
+            document.getElementById('page2').classList.add('active');
+        }
+        
+        function toggleMessage() {
+            var message = document.getElementById('message');
+            if (message.style.display === 'none' || message.style.display === '') {
+                message.style.display = 'block';
+            } else {
+                message.style.display = 'none';
+            }
+        }
+    </script>
+</body>
+</html>
